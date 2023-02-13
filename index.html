@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Product preview card component</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap");
+
+      body {
+        background: hsl(30, 38%, 92%);
+        color: hsl(228, 12%, 48%);
+        font-family: "Montserrat", Courier, monospace;
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      .important-text {
+        font-family: "Fraunces", Courier, monospace;
+        font-weight: 700;
+      }
+
+      h1 {
+        font-size: 36px;
+        line-height: 36px;
+        color: hsl(212, 21%, 14%);
+        margin: 10px 0px;
+      }
+
+      p {
+        padding: 0;
+        margin: 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 23px;
+        color: hsl(228, 12%, 48%);
+      }
+
+      .product-modal {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 675px;
+        background: hsl(0, 0%, 100%);
+        border-radius: 10px;
+        display: flex;
+      }
+
+      .product-modal > div {
+        flex: 1 1 0;
+      }
+
+      .product-modal .cover-section {
+        width: 100%;
+        border-radius: 10px 0px 0px 10px;
+        background: url("./images/image-product-desktop.jpg") no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .product-modal .details-section .content {
+        padding: 30px;
+      }
+
+      .product-modal .details-section .category {
+        text-transform: uppercase;
+        color: hsl(228, 12%, 48%);
+        letter-spacing: 5px;
+      }
+
+      .product-modal .details-section .price {
+        display: flex;
+        padding: 18px 0px;
+      }
+
+      .product-modal .details-section .price .discounted {
+        color: hsl(158, 36%, 37%);
+        font-size: 30px;
+      }
+
+      .product-modal .details-section .price .stroke {
+        text-decoration: line-through;
+        align-self: center;
+        padding: 0px 20px;
+        text-align: center;
+      }
+
+      .product-modal .details-section button {
+        width: 100%;
+        background: hsl(158, 36%, 37%);
+        padding: 15px;
+        color: hsl(0, 0%, 100%);
+        border-radius: 10px;
+        border: none;
+        font: inherit;
+        outline: inherit;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      .product-modal .details-section button img {
+        padding: 0px 10px;
+      }
+
+      @media only screen and (max-width: 768px) {
+        h1 {
+          font-size: 30px;
+        }
+
+        .product-modal {
+          width: 60%;
+          min-width: inherit;
+          flex-direction: column;
+        }
+
+        .product-modal .cover-section {
+          border-radius: 10px 10px 0px 0px;
+          min-height: 250px;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        h1 {
+          font-size: 30px;
+        }
+
+        .product-modal {
+          width: 90%;
+          min-width: inherit;
+          flex-direction: column;
+        }
+
+        .product-modal .cover-section {
+          border-radius: 10px 10px 0px 0px;
+          min-height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="product-modal">
+        <div class="cover-section"></div>
+        <div class="details-section">
+          <div class="content">
+            <span class="category">Perfume</span>
+            <h1 class="important-text">Gabrielle Essence Eau De Parfum</h1>
+            <p>
+              A floral, solar and voluptuous interpretation composed by Olivier
+              Polge, Perfumer-Creator for the House of CHANEL.
+            </p>
+            <div class="price">
+              <span class="discounted important-text">$149.99</span>
+              <span class="stroke">$169.99</span>
+            </div>
+            <button>
+              <img alt="Cart icon" src="./images/icon-cart.svg" />
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
